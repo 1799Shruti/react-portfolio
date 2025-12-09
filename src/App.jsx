@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-
+import StudentTable from "./Table";
 function App() {
   // const [count, setCount] = useState(0)
   var [val, setVal] = useState();
@@ -16,6 +16,8 @@ function App() {
       >
         Clear Input
       </button>
+
+      <StudentTable></StudentTable>
     </div>
   );
 }
