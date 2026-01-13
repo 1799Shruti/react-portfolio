@@ -1,12 +1,16 @@
-import { Fragment } from "react/jsx-runtime";
-import Navbar from "../shared/components/Navbar";
-import "../styles/App.css";
+import { Outlet } from "react-router";
+import { Navbar, Footer } from "@/shared/components";
+import styles from "./App.module.css";
 
 function App() {
   return (
-    <Fragment>
+    <div className={styles.app}>
       <Navbar />
-    </Fragment>
+      <main className={styles.main}>
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
   );
 }
 

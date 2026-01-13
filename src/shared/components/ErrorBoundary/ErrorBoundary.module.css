@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  color: #ef4444;
+  margin-bottom: 12px;
+}
+
+.message {
+  color: #94a3b8;
+  margin-bottom: 24px;
+  max-width: 400px;
+}
+
+.button {
+  background-color: orangered;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #e64a19;
+}

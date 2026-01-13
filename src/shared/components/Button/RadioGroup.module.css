@@ -1,0 +1,27 @@
+.group {
+  display: flex;
+  gap: 12px;
+}
+
+.vertical {
+  flex-direction: column;
+}
+
+.horizontal {
+  flex-direction: row;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.input {
+  accent-color: orangered;
+}
+
+.text {
+  color: inherit;
+}

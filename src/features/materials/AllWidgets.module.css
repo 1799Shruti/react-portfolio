@@ -1,0 +1,23 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 32px;
+  padding: 20px;
+  border: 1px solid #334155;
+  border-radius: 8px;
+}
+
+.section h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #f1f5f9;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
