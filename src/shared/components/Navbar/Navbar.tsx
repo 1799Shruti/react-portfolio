@@ -17,9 +17,13 @@ const defaultNavItems: NavItem[] = [
   { to: "/students", label: "Students" },
   { to: "/clock", label: "Clock" },
   { to: "/materials", label: "Materials" },
+  { to: "/counter", label: "Counter" },
 ];
 
-export function Navbar({ brand = "MyApp", items = defaultNavItems }: NavbarProps) {
+export function Navbar({
+  brand = "MyApp",
+  items = defaultNavItems,
+}: NavbarProps) {
   return (
     <nav className={styles.navbar}>
       <h2 className={styles.logo}>{brand}</h2>

@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router";
 import App from "./App";
 import { HomePage, StudentsPage, ClockPage, AllWidgets } from "@/features";
 import { ROUTES } from "@/shared/constants";
+import CounterPage from "@/features/counter/pages/counterPage";
 
 export const router = createBrowserRouter([
   {
@@ -12,6 +13,7 @@ export const router = createBrowserRouter([
       { path: "students", element: <StudentsPage /> },
       { path: "clock", element: <ClockPage /> },
       { path: "materials", element: <AllWidgets /> },
+      { path: "counter", element: <CounterPage /> },
     ],
   },
 ]);
