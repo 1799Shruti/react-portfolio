@@ -18,6 +18,7 @@ const defaultNavItems: NavItem[] = [
   { to: "/clock", label: "Clock" },
   { to: "/materials", label: "Materials" },
   { to: "/counter", label: "Counter" },
+  { to: "/todo", label: "Todo" },
 ];
 
 export function Navbar({

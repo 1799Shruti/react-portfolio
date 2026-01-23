@@ -3,6 +3,7 @@ import App from "./App";
 import { HomePage, StudentsPage, ClockPage, AllWidgets } from "@/features";
 import { ROUTES } from "@/shared/constants";
 import CounterPage from "@/features/counter/pages/counterPage";
+import Todo from "@/features/todo/pages/Todo.page";
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ export const router = createBrowserRouter([
       { path: "clock", element: <ClockPage /> },
       { path: "materials", element: <AllWidgets /> },
       { path: "counter", element: <CounterPage /> },
+      { path: "todo", element: <Todo /> },
     ],
   },
 ]);
