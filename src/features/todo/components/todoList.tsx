@@ -1,51 +1,43 @@
-import { TodoItemModel, TodoStatus } from "./todoModel";
+import { TASK_STATUS } from "../common/enum";
 
-interface TodoListProps {
-  todos: TodoItemModel[];
-  setTodos: React.Dispatch<React.SetStateAction<TodoItemModel[]>>;
+/* ---------- Types ---------- */
+
+type TaskStatus = (typeof TASK_STATUS)[keyof typeof TASK_STATUS];
+
+interface TodoItem {
+  id: number;
+  title: string;
+  description: string;
+  status: TaskStatus;
+  createdAt: string;
 }
 
-const TodoList = ({ todos, setTodos }: TodoListProps) => {
-  const toggleStatus = (index: number) => {
-    setTodos((prev) =>
-      prev.map((todo, i) =>
-        i === index
-          ? {
-              ...todo,
-              status:
-                todo.status === TodoStatus.ACTIVE
-                  ? TodoStatus.COMPLETED
-                  : TodoStatus.ACTIVE,
-            }
-          : todo,
-      ),
-    );
-  };
+interface TodoListProps {
+  todos: TodoItem[];
+  onEdit: (todo: TodoItem) => void;
+  onDelete: (id: number) => void;
+}
 
-  const clearCompleted = () => {
-    setTodos((prev) =>
-      prev.filter((todo) => todo.status !== TodoStatus.COMPLETED),
-    );
-  };
+/* ---------- Component ---------- */
+
+const TodoList: React.FC<TodoListProps> = ({ todos, onEdit, onDelete }) => {
+  if (!todos.length) {
+    return <p>No tasks available</p>;
+  }
 
   return (
-    <div>
-      <button onClick={clearCompleted} style={{ marginBottom: "1rem" }}>
-        Clear Completed
-      </button>
-      {todos.map((todo, index) => (
-        <div key={index}>
-          <label>
-            <input
-              type="checkbox"
-              checked={todo.status === TodoStatus.COMPLETED}
-              onChange={() => toggleStatus(index)}
-            />
-            {todo.item} - {todo.status}
-          </label>
-        </div>
+    <ul>
+      {todos.map((todo) => (
+        <li key={todo.id}>
+          <h3>{todo.title}</h3>
+          <p>{todo.description}</p>
+          <p>Status: {todo.status}</p>
+
+          <button onClick={() => onEdit(todo)}>Edit</button>
+          <button onClick={() => onDelete(todo.id)}>Delete</button>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 
